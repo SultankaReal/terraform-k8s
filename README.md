@@ -206,7 +206,7 @@ sudo systemctl start kubelet
 ### Подключение Worker Node к Master Node
 
 
-kubeadm join 192.168.10.11:6443 --token <TOKEN> --discovery-token-ca-cert-hash sha256:<SHA256>
+kubeadm join 192.168.10.11:6443 --token [TOKEN] --discovery-token-ca-cert-hash sha256:[SHA256]
 
 
 ##  Просмотр Nodes
