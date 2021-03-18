@@ -1,9 +1,9 @@
 # Практикум 11.4
 
-## Установка Terraform**
+## Установка Terraform
 https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-## Установка kubectl**
+## Установка kubectl
 https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
 
 ## Файл **yandex.tf** описывает создание двух виртуальных машин:
@@ -23,7 +23,7 @@ https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
   RAM: 4
   
   
-## IP-адреса ВМ**:
+## IP-адреса ВМ
 
 
 external_ip_address_vm_1 = "178.154.213.25"
@@ -38,11 +38,11 @@ internal_ip_address_vm_1 = "192.168.10.11"
 internal_ip_address_vm_2 = "192.168.10.12"
 
 
-## Отключение swap**
+## Отключение swap
 
 sudo swapoff -a
 
-## Установка Docker на Master-а**
+## Установка Docker на Master-а
 
 sudo apt update
 
@@ -107,6 +107,27 @@ sudo systemctl enable kubelet
 
 sudo systemctl start kubelet
 
+
+##  Инициализация кластера 
+
+
+sudo kubeadm init –-apiserver-advertise-address=192.168.10.11 --pod-network-cidr 10.244.0.0/16
+
+
+mkdir -p $HOME/.kube
+
+
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+## Установка Kubernetes Dashboard
+
+
+
+sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
 
 
