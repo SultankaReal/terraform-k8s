@@ -58,7 +58,7 @@ sudo swapoff -a
 
 ### Установка Docker на Master-а
 
-````
+```
 sudo apt update
 
 
