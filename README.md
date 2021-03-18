@@ -219,7 +219,7 @@ kubeadm join 192.168.10.11:6443 --token [TOKEN] --discovery-token-ca-cert-hash s
 
 
 
-Снимок экрана 2021-03-18 в 11.43.22![image](https://user-images.githubusercontent.com/77805226/111620313-99af3380-87f7-11eb-94b0-7ea6df2540d8.png)
+![image](https://user-images.githubusercontent.com/77805226/111620313-99af3380-87f7-11eb-94b0-7ea6df2540d8.png)
 
 
 
@@ -229,7 +229,7 @@ kubeadm join 192.168.10.11:6443 --token [TOKEN] --discovery-token-ca-cert-hash s
 kubectl get nodes
 
 
-Снимок экрана 2021-03-18 в 11.44.20![image](https://user-images.githubusercontent.com/77805226/111620393-b51a3e80-87f7-11eb-8e9f-b9c3ffbd81ed.png)
+![image](https://user-images.githubusercontent.com/77805226/111620393-b51a3e80-87f7-11eb-8e9f-b9c3ffbd81ed.png)
 
 
 
@@ -245,7 +245,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/a
 sudo kubectl proxy
 
 
-Снимок экрана 2021-03-18 в 11.45.30![image](https://user-images.githubusercontent.com/77805226/111620419-bcd9e300-87f7-11eb-8608-61343729684b.png)
+![image](https://user-images.githubusercontent.com/77805226/111620419-bcd9e300-87f7-11eb-8608-61343729684b.png)
 
 
 
@@ -256,11 +256,11 @@ https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the
 
 
 
-Снимок экрана 2021-03-18 в 12.18.21![image](https://user-images.githubusercontent.com/77805226/111620434-c4998780-87f7-11eb-81c9-826c5b2b65e0.png)
+![image](https://user-images.githubusercontent.com/77805226/111620434-c4998780-87f7-11eb-81c9-826c5b2b65e0.png)
 
 
 
-Снимок экрана 2021-03-18 в 12.49.52![Uploading image.png…]()
+![Uploading image.png…]()
 
 
 
