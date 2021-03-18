@@ -12,14 +12,23 @@ https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
 
 
   Имя машины: terraform1
+  
+  
   Количество CPU: 4
+  
+  
   RAM: 4
+  
 
 - Slave (Worker)
 
 
   Имя машины: terraform2
+  
+  
   Количество CPU: 4
+  
+  
   RAM: 4
   
   
