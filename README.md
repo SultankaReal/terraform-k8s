@@ -54,7 +54,7 @@ internal_ip_address_vm_2 = "192.168.10.12"
 
 ### Отключение swap
 
-sudo swapoff -a
+`sudo swapoff -a`
 
 ### Установка Docker на Master-а
 
