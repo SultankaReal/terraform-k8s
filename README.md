@@ -209,6 +209,9 @@ sudo systemctl start kubelet
 kubeadm join 192.168.10.11:6443 --token [TOKEN] --discovery-token-ca-cert-hash sha256:[SHA256]
 
 
+Снимок экрана 2021-03-18 в 11.43.22![image](https://user-images.githubusercontent.com/77805226/111620313-99af3380-87f7-11eb-94b0-7ea6df2540d8.png)
+
+
 ##  Просмотр Nodes
 
 
