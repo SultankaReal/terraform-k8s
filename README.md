@@ -27,9 +27,20 @@ https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
 
 
 external_ip_address_vm_1 = "178.154.213.25"
+
+
 external_ip_address_vm_2 = "178.154.208.169"
+
+
 internal_ip_address_vm_1 = "192.168.10.11"
+
+
 internal_ip_address_vm_2 = "192.168.10.12"
 
+
+**Отключение swap**:
+
+
+sudo swapoff -a![image](https://user-images.githubusercontent.com/77805226/111617144-d24d0e00-87f3-11eb-84fe-f2ad67f611f5.png)
 
 
