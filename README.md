@@ -26,7 +26,7 @@ https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
 ## IP-адреса ВМ
 
 
-external_ip_address_vm_1 = "178.154.213.25"
+###### external_ip_address_vm_1 = "178.154.213.25"
 
 
 external_ip_address_vm_2 = "178.154.208.169"
