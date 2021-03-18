@@ -40,7 +40,40 @@ internal_ip_address_vm_2 = "192.168.10.12"
 
 **Отключение swap**:
 
+sudo swapoff -a
 
-sudo swapoff -a![image](https://user-images.githubusercontent.com/77805226/111617144-d24d0e00-87f3-11eb-84fe-f2ad67f611f5.png)
+**Установка Docker на Master-а**:
+
+sudo apt update
+
+
+sudo apt install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+    
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+   
+sudo apt update
+
+
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+
+sudo systemctl enable docker
+
+
+sudo systemctl start docker
+
 
 
