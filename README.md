@@ -54,32 +54,34 @@ internal_ip_address_vm_2 = "192.168.10.12"
 
 ### Отключение swap
 
-`sudo swapoff -a`
+sudo swapoff -a
 
 ### Установка Docker на Master-а
 
-`sudo apt update`
+````
+sudo apt update
 
 
-`sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common`
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
     
     
-`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 
-`sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
    
    
-`sudo apt update`
+sudo apt update
 
 
-`sudo apt install docker-ce docker-ce-cli containerd.io`
+sudo apt install docker-ce docker-ce-cli containerd.io
 
 
-`sudo systemctl enable docker`
+sudo systemctl enable docker
 
 
-`sudo systemctl start docker`
+sudo systemctl start docker
+```
 
 ### Установка kubelet, kubadm, kubectl
 
