@@ -54,7 +54,7 @@ internal_ip_address_vm_2 = "192.168.10.12"
 
 ### Отключение swap
 
-sudo swapoff -a
+`sudo swapoff -a`
 
 ### Установка Docker на Master-а
 
@@ -86,56 +86,59 @@ sudo systemctl start docker
 ### Установка kubelet, kubadm, kubectl
 
 
-`sudo modprobe br_netfilter`
+```
+sudo modprobe br_netfilter
 
 
-`cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf br_netfilter EOF`
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf br_netfilter EOF
 
-`cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
-EOF`
+EOF
 
 
-`sudo sysctl --system`
+sudo sysctl --system
 
-`sudo apt update && sudo apt install -y apt-transport-https curl`
-
-
-`curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -`
+sudo apt update && sudo apt install -y apt-transport-https curl
 
 
-`cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF`
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 
-`sudo apt update`
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF
 
 
-`sudo apt install -y kubelet kubeadm kubectl`
+sudo apt update
 
 
-`sudo apt-mark hold kubelet kubeadm kubectl`
+sudo apt install -y kubelet kubeadm kubectl
 
 
-`sudo systemctl enable kubelet`
+sudo apt-mark hold kubelet kubeadm kubectl
 
 
-`sudo systemctl start kubelet`
+sudo systemctl enable kubelet
+
+
+sudo systemctl start kubelet
+```
 
 
 ###  Инициализация кластера 
 
 
-`sudo kubeadm init –-apiserver-advertise-address=192.168.10.11 --pod-network-cidr 10.244.0.0/16`
+```
+sudo kubeadm init –-apiserver-advertise-address=192.168.10.11 --pod-network-cidr 10.244.0.0/16
 
 
-`mkdir -p $HOME/.kube`
+mkdir -p $HOME/.kube
 
 
-`sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 
 
-`sudo chown $(id -u):$(id -g) $HOME/.kube/config`
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
 ### Установка сети для pods
@@ -154,69 +157,73 @@ EOF`
 
 ### Установка Docker на Worker-e
 
-`sudo apt update`
+```
+sudo apt update
 
 
-`sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common`
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+   
     
-    
-`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 
-`sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
    
    
-`sudo apt update`
+sudo apt update
 
 
-`sudo apt install docker-ce docker-ce-cli containerd.io`
+sudo apt install docker-ce docker-ce-cli containerd.io
 
 
-`sudo systemctl enable docker`
+sudo systemctl enable docker
 
 
-`sudo systemctl start docker`
+sudo systemctl start docker
+```
 
 
 ### Установка kubelet, kubadm, kubectl
 
 
-`sudo modprobe br_netfilter`
+```
+sudo modprobe br_netfilter
 
 
-`cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf br_netfilter EOF`
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf br_netfilter EOF
 
-`cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
-EOF`
+EOF
 
 
-`sudo sysctl --system`
-
-`sudo apt update && sudo apt install -y apt-transport-https curl`
+sudo sysctl --system
 
 
-`curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -`
+sudo apt update && sudo apt install -y apt-transport-https curl
 
 
-`cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF`
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 
-`sudo apt update`
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF
 
 
-`sudo apt install -y kubelet kubeadm kubectl`
+sudo apt update
 
 
-`sudo apt-mark hold kubelet kubeadm kubectl`
+sudo apt install -y kubelet kubeadm kubectl
 
 
-`sudo systemctl enable kubelet`
+sudo apt-mark hold kubelet kubeadm kubectl
 
 
-`sudo systemctl start kubelet`
+sudo systemctl enable kubelet
 
+
+sudo systemctl start kubelet
+```
 
 ### Подключение Worker Node к Master Node
 
