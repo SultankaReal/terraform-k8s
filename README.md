@@ -1,10 +1,10 @@
 # Практикум 11.4
 
 ## Установка Terraform
-[link](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+[Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ## Установка kubectl
-[link](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
+[Kubectl](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
 
 ## Файл **yandex.tf** описывает создание двух виртуальных машин:
 
@@ -256,7 +256,7 @@ sudo kubectl proxy
 ## Аутентификация по токену в Kubernetes Dashboard
 
 
-[link](https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard)
+[Kubernetes Dashboard](https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard)
 
 
 
