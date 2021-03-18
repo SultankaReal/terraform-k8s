@@ -1,9 +1,9 @@
 ****Практикум 11.4****
 
-*Установка Terraform*:
+**Установка Terraform**:
 https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-*Установка kubectl*:
+**Установка kubectl**:
 https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
 
 Файл **yandex.tf** описывает создание двух виртуальных машин:
@@ -23,7 +23,7 @@ https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
   RAM: 4
   
   
-IP-адреса ВМ:
+**IP-адреса ВМ**:
 
 
 external_ip_address_vm_1 = "178.154.213.25"
