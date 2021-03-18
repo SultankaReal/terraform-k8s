@@ -46,6 +46,10 @@ internal_ip_address_vm_1 = "192.168.10.11"
 
 internal_ip_address_vm_2 = "192.168.10.12"
 
+
+![image](https://user-images.githubusercontent.com/77805226/111641288-0f25fe80-880e-11eb-8e7d-0038e7b1a319.png)
+
+
 ##  Master Node
 
 ### Отключение swap
