@@ -54,7 +54,9 @@ internal_ip_address_vm_2 = "192.168.10.12"
 
 ### Отключение swap
 
-`sudo swapoff -a`
+```
+sudo swapoff -a
+```
 
 ### Установка Docker на Master-а
 
@@ -146,7 +148,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ### Установка сети для pods
 
 
-`sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml`
+```
+sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+```
 
 
 ## Worker Node
@@ -154,7 +158,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 ### Отключение swap
 
-`sudo swapoff -a`
+```
+sudo swapoff -a
+```
 
 
 ### Установка Docker на Worker-e
@@ -230,7 +236,9 @@ sudo systemctl start kubelet
 ### Подключение Worker Node к Master Node
 
 
-`kubeadm join 192.168.10.11:6443 --token [TOKEN] --discovery-token-ca-cert-hash sha256:[SHA256]`
+```
+kubeadm join 192.168.10.11:6443 --token [TOKEN] --discovery-token-ca-cert-hash sha256:[SHA256]
+```
 
 
 
@@ -241,7 +249,9 @@ sudo systemctl start kubelet
 ##  Просмотр Nodes
 
 
-`kubectl get nodes`
+```
+kubectl get nodes
+```
 
 
 ![image](https://user-images.githubusercontent.com/77805226/111620393-b51a3e80-87f7-11eb-8e9f-b9c3ffbd81ed.png)
@@ -251,13 +261,17 @@ sudo systemctl start kubelet
 ##  Установка Kubernetes Dashboard
 
 
-`kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml`
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+```
 
 
 ##  Включение Kubernetes Proxy
 
 
-`sudo kubectl proxy`
+```
+sudo kubectl proxy
+```
 
 
 ![image](https://user-images.githubusercontent.com/77805226/111620419-bcd9e300-87f7-11eb-8608-61343729684b.png)
