@@ -1,12 +1,12 @@
 # Практикум 11.4
 
-**Установка Terraform**:
+## Установка Terraform**
 https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-**Установка kubectl**:
+## Установка kubectl**
 https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
 
-Файл **yandex.tf** описывает создание двух виртуальных машин:
+## Файл **yandex.tf** описывает создание двух виртуальных машин:
 
 - Master
 
@@ -23,7 +23,7 @@ https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/
   RAM: 4
   
   
-**IP-адреса ВМ**:
+## IP-адреса ВМ**:
 
 
 external_ip_address_vm_1 = "178.154.213.25"
@@ -38,11 +38,11 @@ internal_ip_address_vm_1 = "192.168.10.11"
 internal_ip_address_vm_2 = "192.168.10.12"
 
 
-**Отключение swap**:
+## Отключение swap**
 
 sudo swapoff -a
 
-**Установка Docker на Master-а**:
+## Установка Docker на Master-а**
 
 sudo apt update
 
@@ -66,6 +66,47 @@ sudo systemctl enable docker
 
 
 sudo systemctl start docker
+
+## Установка kubelet, kubadm, kubectl
+
+
+
+sudo modprobe br_netfilter
+
+
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf br_netfilter EOF
+
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+
+
+sudo sysctl --system
+
+sudo apt update && sudo apt install -y apt-transport-https curl
+
+
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list deb https://apt.kubernetes.io/ kubernetes-xenial main EOF
+
+
+sudo apt update
+
+
+sudo apt install -y kubelet kubeadm kubectl
+
+
+sudo apt-mark hold kubelet kubeadm kubectl
+
+
+sudo systemctl enable kubelet
+
+
+sudo systemctl start kubelet
+
 
 
 
