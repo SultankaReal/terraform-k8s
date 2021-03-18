@@ -260,7 +260,7 @@ https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the
 
 
 
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/77805226/111620659-117d5e00-87f8-11eb-84ef-8099d43af59b.png)
 
 
 
